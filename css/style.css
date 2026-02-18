@@ -1,0 +1,229 @@
+/* =========================================================
+   Design tokens
+   ========================================================= */
+
+:root {
+  --color-background: #f9f9f9;
+  --color-foreground: #424242;
+  --color-accent: #000000;
+  --color-shade: #7f7f7f;
+
+  --font-size: 16px;
+  --line-height: 24px;
+
+  --font-weight-bold: 600;
+
+  --body-max-width: 702px;
+  --margin-narrow: 24px;
+
+  --spacing-xs: 8px;
+  --spacing-s: 12px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 48px;
+}
+
+/* =========================================================
+   Box model
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   Base
+   ========================================================= */
+
+html {
+  font-family: ui-monospace, monospace;
+  font-weight: normal;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--color-foreground);
+}
+
+body {
+  background-color: var(--color-background);
+  max-width: var(--body-max-width);
+  margin: var(--spacing-xl) auto;
+}
+
+/* =========================================================
+   Typography & spacing
+   ========================================================= */
+
+h1,
+h2,
+h3,
+p,
+ol,
+ul,
+details {
+  margin: var(--spacing-s) var(--margin-narrow);
+}
+
+h1,
+h2,
+h3 {
+  font-size: inherit;
+  font-weight: var(--font-weight-bold);
+  margin-top: var(--spacing-xl);
+  color: var(--color-accent);
+}
+
+/* =========================================================
+   Lists
+   ========================================================= */
+
+ol {
+  padding-inline-start: var(--spacing-xl);
+}
+
+ul {
+  padding-inline-start: var(--line-height);
+}
+
+li + li {
+  margin-top: var(--spacing-s);
+}
+
+.list-plain {
+  list-style-type: none;
+  list-style-position: inside;
+  padding-inline-start: 0;
+}
+
+/* =========================================================
+   Media
+   ========================================================= */
+
+img,
+video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: var(--line-height) auto;
+  background-color: var(--color-shade);
+  border: none;
+  object-fit: cover;
+}
+
+/* =========================================================
+   Containers
+   ========================================================= */
+
+.container,
+blockquote {
+  display: block;
+  max-width: var(--body-max-width);
+  margin: var(--line-height) auto;
+  border: 1px solid var(--color-shade);
+}
+
+blockquote > * {
+  margin: var(--line-height);
+}
+
+blockquote > footer > a {
+  word-break: break-word;
+}
+
+/* =========================================================
+   Interactive elements
+   ========================================================= */
+
+a,
+a:visited {
+  color: inherit;
+}
+
+a:hover,
+summary:hover {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+}
+
+summary {
+  cursor: pointer;
+}
+
+/* =========================================================
+   Details / disclosure
+   ========================================================= */
+
+details > ol {
+  margin-inline: 0;
+}
+
+details > summary {
+  list-style-type: none;
+}
+
+summary::marker,
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details > summary::after {
+  content: "[More ↓]";
+}
+
+details[open] > summary::after {
+  content: "[Less ↑]";
+}
+
+/* =========================================================
+   Form
+   ========================================================= */
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* =========================================================
+   Inline elements
+   ========================================================= */
+
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+/* =========================================================
+   Code
+   ========================================================= */
+
+pre {
+  line-height: 1;
+}
+
+/* =========================================================
+   Selection
+   ========================================================= */
+
+::selection {
+  background-color: var(--color-foreground);
+  color: var(--color-background);
+}
+
+/* =========================================================
+   Utilities
+   ========================================================= */
+
+.navigation-back {
+  margin-top: var(--spacing-xl);
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 720px) {
+  :root {
+    --body-max-width: calc(100vw - (var(--spacing-s) * 2));
+    --margin-narrow: 0px;
+  }
+}
